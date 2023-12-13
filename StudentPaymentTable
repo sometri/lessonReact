@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+
+const StudentPaymentTable = () => {
+  const [students, setStudents] = useState([
+    { id: 1, name: 'Student 1', paymentStatus: 'Paid', amountPaid: 100 },
+    { id: 2, name: 'Student 2', paymentStatus: 'Pending', amountPaid: 0 },
+    { id: 3, name: 'Student 3', paymentStatus: 'Paid', amountPaid: 75 },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Payment Status</th>
+          <th>Amount Paid</th>
+        </tr>
+      </thead>
+      <tbody>
+        {students.map((student) => (
+          <tr key={student.id}>
+            <td>{student.id}</td>
+            <td>{student.name}</td>
+            <td>{student.paymentStatus}</td>
+            <td>{student.amountPaid}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default StudentPaymentTable;
