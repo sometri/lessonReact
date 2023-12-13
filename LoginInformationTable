@@ -1,0 +1,32 @@
+import React, { useState } from 'react';
+
+const LoginInformationTable = () => {
+  const [usersData, setUsersData] = useState([
+    { id: 1, username: 'john_doe', lastLogin: '2022-01-15 08:30:00' },
+    { id: 2, username: 'jane_smith', lastLogin: '2022-02-20 12:45:00' },
+    { id: 3, username: 'bob_johnson', lastLogin: '2022-03-10 16:20:00' },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Last Login</th>
+        </tr>
+      </thead>
+      <tbody>
+        {usersData.map((user) => (
+          <tr key={user.id}>
+            <td>{user.id}</td>
+            <td>{user.username}</td>
+            <td>{user.lastLogin}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default LoginInformationTable;
