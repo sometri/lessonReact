@@ -1,0 +1,32 @@
+import React, { useState } from 'react';
+
+const StudentAttendanceTable = () => {
+  const [students, setStudents] = useState([
+    { id: 1, name: 'Student 1', attendance: 'Present' },
+    { id: 2, name: 'Student 2', attendance: 'Absent' },
+    { id: 3, name: 'Student 3', attendance: 'Present' },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        {students.map((student) => (
+          <tr key={student.id}>
+            <td>{student.id}</td>
+            <td>{student.name}</td>
+            <td>{student.attendance}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default StudentAttendanceTable;
