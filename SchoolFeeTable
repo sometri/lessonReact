@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+
+const SchoolFeeTable = () => {
+  const [fees, setFees] = useState([
+    { id: 1, category: 'Tuition Fee', amount: 1000, dueDate: '2023-05-15' },
+    { id: 2, category: 'Books and Supplies', amount: 200, dueDate: '2023-06-01' },
+    { id: 3, category: 'Extracurricular Activities', amount: 50, dueDate: '2023-05-30' },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Due Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {fees.map((fee) => (
+          <tr key={fee.id}>
+            <td>{fee.id}</td>
+            <td>{fee.category}</td>
+            <td>${fee.amount.toFixed(2)}</td>
+            <td>{fee.dueDate}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default SchoolFeeTable;
