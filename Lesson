@@ -1,0 +1,22 @@
+import React, { useState } from 'react';
+
+const Lesson = () => {
+  const [lesson, setLesson] = useState({
+    id: 1,
+    title: 'Introduction to React',
+    instructor: 'John Doe',
+    date: '2023-01-15',
+    duration: '2 hours',
+  });
+
+  return (
+    <div>
+      <h2>{lesson.title}</h2>
+      <p>Instructor: {lesson.instructor}</p>
+      <p>Date: {lesson.date}</p>
+      <p>Duration: {lesson.duration}</p>
+    </div>
+  );
+};
+
+export default Lesson;
