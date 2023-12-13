@@ -1,0 +1,19 @@
+.program-table-container {
+  margin: 20px;
+}
+
+.program-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.program-table th, .program-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.program-table th {
+  background-color: #f2f2f2;
+}
