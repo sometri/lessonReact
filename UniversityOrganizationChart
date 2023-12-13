@@ -1,0 +1,60 @@
+First, you need to install the library:
+npm install react-org-chart
+============
+import React from 'react';
+import OrgChart from 'react-org-chart';
+
+const UniversityOrganizationChart = () => {
+  // Sample data representing the organizational structure
+  const universityData = {
+    name: 'University',
+    children: [
+      {
+        name: 'Faculties',
+        children: [
+          {
+            name: 'Faculty of Arts',
+            children: [
+              { name: 'English Department', children: [] },
+              { name: 'History Department', children: [] },
+              { name: 'Fine Arts Department', children: [] },
+            ],
+          },
+          {
+            name: 'Faculty of Science',
+            children: [
+              { name: 'Physics Department', children: [] },
+              { name: 'Chemistry Department', children: [] },
+              { name: 'Biology Department', children: [] },
+            ],
+          },
+          // Add more faculties as needed
+        ],
+      },
+      {
+        name: 'Administration',
+        children: [
+          {
+            name: 'Registrar Office',
+            children: [],
+          },
+          {
+            name: 'Finance Department',
+            children: [],
+          },
+          // Add more administrative departments as needed
+        ],
+      },
+      // Add more top-level divisions as needed
+    ],
+  };
+
+  return (
+    <div>
+      <h2>University Organization Chart</h2>
+      <OrgChart tree={universityData} />
+    </div>
+  );
+};
+
+export default UniversityOrganizationChart;
