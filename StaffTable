@@ -1,0 +1,36 @@
+import React, { useState } from 'react';
+
+const StaffTable = () => {
+  const [staffData, setStaffData] = useState([
+    { id: 1, name: 'John Doe', position: 'Manager', hireDate: '2020-05-15', retirementDate: '2030-05-15' },
+    { id: 2, name: 'Jane Smith', position: 'Developer', hireDate: '2019-08-20', retirementDate: '2035-08-20' },
+    { id: 3, name: 'Bob Johnson', position: 'Accountant', hireDate: '2022-02-10', retirementDate: '2032-02-10' },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Hire Date</th>
+          <th>Retirement Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {staffData.map((staff) => (
+          <tr key={staff.id}>
+            <td>{staff.id}</td>
+            <td>{staff.name}</td>
+            <td>{staff.position}</td>
+            <td>{staff.hireDate}</td>
+            <td>{staff.retirementDate}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default StaffTable;
