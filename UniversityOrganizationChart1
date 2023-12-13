@@ -1,0 +1,66 @@
+import React from 'react';
+
+const UniversityOrganizationChart = () => {
+  // Sample data representing the organizational structure
+  const universityData = {
+    name: 'University',
+    children: [
+      {
+        name: 'Faculties',
+        children: [
+          {
+            name: 'Faculty of Arts',
+            children: [
+              { name: 'English Department', children: [] },
+              { name: 'History Department', children: [] },
+              { name: 'Fine Arts Department', children: [] },
+            ],
+          },
+          {
+            name: 'Faculty of Science',
+            children: [
+              { name: 'Physics Department', children: [] },
+              { name: 'Chemistry Department', children: [] },
+              { name: 'Biology Department', children: [] },
+            ],
+          },
+          // Add more faculties as needed
+        ],
+      },
+      {
+        name: 'Administration',
+        children: [
+          {
+            name: 'Registrar Office',
+            children: [],
+          },
+          {
+            name: 'Finance Department',
+            children: [],
+          },
+          // Add more administrative departments as needed
+        ],
+      },
+      // Add more top-level divisions as needed
+    ],
+  };
+
+  // Recursive function to render the organization chart
+  const renderChart = (node) => (
+    <ul key={node.name}>
+      <li>{node.name}</li>
+      {node.children && node.children.length > 0 && (
+        <ul>{node.children.map((child) => renderChart(child))}</ul>
+      )}
+    </ul>
+  );
+
+  return (
+    <div>
+      <h2>University Organization Chart</h2>
+      {renderChart(universityData)}
+    </div>
+  );
+};
+
+export default UniversityOrganizationChart;
