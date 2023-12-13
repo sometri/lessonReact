@@ -1,0 +1,74 @@
+import React, { useState } from 'react';
+import './UniversityProgramTable.css'; // Import the CSS file
+
+const UniversityProgramTable = () => {
+  const [programs, setPrograms] = useState([
+    {
+      id: 1,
+      name: 'Bachelor of Computer Science',
+      degree: 'Bachelor\'s',
+      department: 'Computer Science',
+      duration: '4 years',
+      description: 'A comprehensive program covering computer science fundamentals and advanced topics.',
+      admissionRequirements: 'High school diploma, standardized test scores',
+      careerOpportunities: 'Software developer, IT consultant, data analyst',
+    },
+    {
+      id: 2,
+      name: 'Master of Business Administration',
+      degree: 'Master\'s',
+      department: 'Business Administration',
+      duration: '2 years',
+      description: 'An advanced program focusing on business strategy, leadership, and management.',
+      admissionRequirements: 'Bachelor\'s degree, letters of recommendation, statement of purpose',
+      careerOpportunities: 'Business manager, entrepreneur, corporate strategist',
+    },
+    {
+      id: 3,
+      name: 'Ph.D. in Physics',
+      degree: 'Doctorate',
+      department: 'Physics',
+      duration: '4-6 years',
+      description: 'A research-oriented program exploring advanced topics in physics.',
+      admissionRequirements: 'Master\'s degree in physics, research proposal, letters of recommendation',
+      careerOpportunities: 'Research scientist, university professor',
+    },
+    // Add more program entries as needed
+  ]);
+
+  return (
+    <div className="program-table-container">
+      <h2>University Program Table</h2>
+      <table className="program-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Program Name</th>
+            <th>Degree Level</th>
+            <th>Department</th>
+            <th>Duration</th>
+            <th>Description</th>
+            <th>Admission Requirements</th>
+            <th>Career Opportunities</th>
+          </tr>
+        </thead>
+        <tbody>
+          {programs.map((program) => (
+            <tr key={program.id}>
+              <td>{program.id}</td>
+              <td>{program.name}</td>
+              <td>{program.degree}</td>
+              <td>{program.department}</td>
+              <td>{program.duration}</td>
+              <td>{program.description}</td>
+              <td>{program.admissionRequirements}</td>
+              <td>{program.careerOpportunities}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default UniversityProgramTable;
