@@ -1,0 +1,46 @@
+import React, { useState } from 'react';
+
+const UniversityFacultiesTable = () => {
+  const [faculties, setFaculties] = useState([
+    { id: 1, name: 'Faculty of Arts', dean: 'Dr. Alice Johnson', departments: ['English', 'History', 'Fine Arts'] },
+    { id: 2, name: 'Faculty of Science', dean: 'Prof. Bob Smith', departments: ['Physics', 'Chemistry', 'Biology'] },
+    { id: 3, name: 'Faculty of Engineering', dean: 'Dr. Carol Brown', departments: ['Civil Engineering', 'Electrical Engineering', 'Mechanical Engineering'] },
+    { id: 4, name: 'Faculty of Business', dean: 'Prof. David White', departments: ['Marketing', 'Finance', 'Management'] },
+    { id: 5, name: 'Faculty of Medicine', dean: 'Dr. Emily Davis', departments: ['Internal Medicine', 'Surgery', 'Pediatrics'] },
+    { id: 6, name: 'Faculty of Law', dean: 'Prof. Frank Miller', departments: ['Criminal Law', 'Constitutional Law', 'International Law'] },
+    { id: 7, name: 'Faculty of Social Sciences', dean: 'Dr. Grace Wilson', departments: ['Psychology', 'Sociology', 'Political Science'] },
+    { id: 8, name: 'Faculty of Education', dean: 'Prof. Henry Turner', departments: ['Elementary Education', 'Secondary Education', 'Special Education'] },
+    { id: 9, name: 'Faculty of Computer Science', dean: 'Dr. Irene Martinez', departments: ['Computer Programming', 'Networks', 'Artificial Intelligence'] },
+    { id: 10, name: 'Faculty of Architecture', dean: 'Prof. Jack Thompson', departments: ['Urban Design', 'Architectural History', 'Building Technology'] },
+    { id: 11, name: 'Faculty of Environmental Studies', dean: 'Dr. Karen Hall', departments: ['Environmental Science', 'Ecology', 'Sustainable Development'] },
+    { id: 12, name: 'Faculty of Music', dean: 'Prof. Laura Clark', departments: ['Music Composition', 'Performance Arts', 'Music Theory'] },
+    { id: 13, name: 'Faculty of Nursing', dean: 'Dr. Michael Adams', departments: ['Nursing Practice', 'Community Health', 'Pediatric Nursing'] },
+    { id: 14, name: 'Faculty of Pharmacy', dean: 'Prof. Nancy Lee', departments: ['Pharmaceutical Sciences', 'Clinical Pharmacy', 'Pharmacology'] },
+    { id: 15, name: 'Faculty of Economics', dean: 'Dr. Oliver Turner', departments: ['Microeconomics', 'Macroeconomics', 'International Economics'] },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Dean</th>
+          <th>Departments</th>
+        </tr>
+      </thead>
+      <tbody>
+        {faculties.map((faculty) => (
+          <tr key={faculty.id}>
+            <td>{faculty.id}</td>
+            <td>{faculty.name}</td>
+            <td>{faculty.dean}</td>
+            <td>{faculty.departments.join(', ')}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default UniversityFacultiesTable;
