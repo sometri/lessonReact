@@ -1,0 +1,36 @@
+import React, { useState } from 'react';
+
+const BuildingTable = () => {
+  const [buildings, setBuildings] = useState([
+    { id: 1, name: 'Building A', location: 'Campus East', floors: 5, rooms: 50 },
+    { id: 2, name: 'Building B', location: 'Campus West', floors: 3, rooms: 30 },
+    { id: 3, name: 'Building C', location: 'Campus South', floors: 4, rooms: 40 },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Floors</th>
+          <th>Rooms</th>
+        </tr>
+      </thead>
+      <tbody>
+        {buildings.map((building) => (
+          <tr key={building.id}>
+            <td>{building.id}</td>
+            <td>{building.name}</td>
+            <td>{building.location}</td>
+            <td>{building.floors}</td>
+            <td>{building.rooms}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default BuildingTable;
