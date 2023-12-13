@@ -1,0 +1,99 @@
+import React, { useState } from 'react';
+
+const StudentInformationTable = () => {
+  const [students, setStudents] = useState([
+    {
+      id: 1,
+      firstName: 'John',
+      lastName: 'Doe',
+      fatherName: 'John Doe Sr.',
+      motherName: 'Jane Doe',
+      dateOfBirth: '1995-05-15',
+      placeOfBirth: 'Cityville',
+      phoneNumber: '123-456-7890',
+      fatherPhoneNumber: '987-654-3210',
+      motherPhoneNumber: '876-543-2109',
+      academicYear: '2023-2024',
+      course: 'Computer Science',
+      score: 85,
+      dgp: 3.5,
+    },
+    {
+      id: 2,
+      firstName: 'Jane',
+      lastName: 'Smith',
+      fatherName: 'Bob Smith',
+      motherName: 'Mary Smith',
+      dateOfBirth: '1998-08-22',
+      placeOfBirth: 'Townsville',
+      phoneNumber: '234-567-8901',
+      fatherPhoneNumber: '876-543-2101',
+      motherPhoneNumber: '765-432-1098',
+      academicYear: '2023-2024',
+      course: 'Mathematics',
+      score: 92,
+      dgp: 3.8,
+    },
+    {
+      id: 3,
+      firstName: 'Bob',
+      lastName: 'Johnson',
+      fatherName: 'Tom Johnson',
+      motherName: 'Alice Johnson',
+      dateOfBirth: '1997-02-10',
+      placeOfBirth: 'Villageville',
+      phoneNumber: '345-678-9012',
+      fatherPhoneNumber: '765-432-1099',
+      motherPhoneNumber: '654-321-0987',
+      academicYear: '2023-2024',
+      course: 'Physics',
+      score: 78,
+      dgp: 3.0,
+    },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Father's Name</th>
+          <th>Mother's Name</th>
+          <th>Date of Birth</th>
+          <th>Place of Birth</th>
+          <th>Phone Number</th>
+          <th>Father's Phone Number</th>
+          <th>Mother's Phone Number</th>
+          <th>Academic Year</th>
+          <th>Course</th>
+          <th>Score</th>
+          <th>DGP</th>
+        </tr>
+      </thead>
+      <tbody>
+        {students.map((student) => (
+          <tr key={student.id}>
+            <td>{student.id}</td>
+            <td>{student.firstName}</td>
+            <td>{student.lastName}</td>
+            <td>{student.fatherName}</td>
+            <td>{student.motherName}</td>
+            <td>{student.dateOfBirth}</td>
+            <td>{student.placeOfBirth}</td>
+            <td>{student.phoneNumber}</td>
+            <td>{student.fatherPhoneNumber}</td>
+            <td>{student.motherPhoneNumber}</td>
+            <td>{student.academicYear}</td>
+            <td>{student.course}</td>
+            <td>{student.score}</td>
+            <td>{student.dgp}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default StudentInformationTable;
