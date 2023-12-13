@@ -1,0 +1,98 @@
+import React, { useState } from 'react';
+import './UniversityProgramTable.css'; // Import the CSS file
+
+const UniversityDepartmentTable = () => {
+  const [departments, setDepartments] = useState([
+    {
+      id: 1,
+      name: 'Computer Science Department',
+      chairperson: 'Dr. Johnson',
+      location: 'Building A, Floor 3',
+      description: 'The Computer Science Department offers programs in software development, artificial intelligence, and data science.',
+      programs: {
+        undergraduate: ['Bachelor of Computer Science', 'Bachelor of Information Technology'],
+        graduate: ['Master of Science in Computer Science'],
+        postgraduate: ['Ph.D. in Computer Science'],
+      },
+    },
+    {
+      id: 2,
+      name: 'Business Administration Department',
+      chairperson: 'Prof. Smith',
+      location: 'Building B, Floor 2',
+      description: 'The Business Administration Department provides programs in business management, finance, and marketing.',
+      programs: {
+        undergraduate: ['Bachelor of Business Administration', 'Bachelor of Finance'],
+        graduate: ['Master of Business Administration', 'Executive MBA'],
+        postgraduate: [], // No postgraduate programs in this department
+      },
+    },
+    {
+      id: 3,
+      name: 'Physics Department',
+      chairperson: 'Dr. Davis',
+      location: 'Building C, Floor 1',
+      description: 'The Physics Department focuses on research and education in theoretical and experimental physics.',
+      programs: {
+        undergraduate: ['Bachelor of Science in Physics', 'Bachelor of Applied Physics'],
+        graduate: ['Master of Science in Physics'],
+        postgraduate: ['Ph.D. in Physics'],
+      },
+    },
+    // Add more department entries as needed
+  ]);
+
+  return (
+    <div className="department-table-container">
+      <h2>University Department Table</h2>
+      <table className="department-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Department Name</th>
+            <th>Chairperson</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Undergraduate Programs</th>
+            <th>Graduate Programs</th>
+            <th>Postgraduate Programs</th>
+          </tr>
+        </thead>
+        <tbody>
+          {departments.map((department) => (
+            <tr key={department.id}>
+              <td>{department.id}</td>
+              <td>{department.name}</td>
+              <td>{department.chairperson}</td>
+              <td>{department.location}</td>
+              <td>{department.description}</td>
+              <td>
+                <ul>
+                  {department.programs.undergraduate.map((program, index) => (
+                    <li key={index}>{program}</li>
+                  ))}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  {department.programs.graduate.map((program, index) => (
+                    <li key={index}>{program}</li>
+                  ))}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  {department.programs.postgraduate.map((program, index) => (
+                    <li key={index}>{program}</li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default UniversityDepartmentTable;
