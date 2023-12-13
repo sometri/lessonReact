@@ -1,0 +1,34 @@
+import React, { useState } from 'react';
+
+const LecturerTable = () => {
+  const [lecturers, setLecturers] = useState([
+    { id: 1, name: 'Dr. John Doe', department: 'Computer Science', courses: ['Web Development', 'Database Management'] },
+    { id: 2, name: 'Prof. Jane Smith', department: 'Mathematics', courses: ['Calculus', 'Linear Algebra'] },
+    { id: 3, name: 'Dr. Bob Johnson', department: 'Physics', courses: ['Quantum Mechanics', 'Thermodynamics'] },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Courses</th>
+        </tr>
+      </thead>
+      <tbody>
+        {lecturers.map((lecturer) => (
+          <tr key={lecturer.id}>
+            <td>{lecturer.id}</td>
+            <td>{lecturer.name}</td>
+            <td>{lecturer.department}</td>
+            <td>{lecturer.courses.join(', ')}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default LecturerTable;
