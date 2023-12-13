@@ -1,0 +1,41 @@
+import React, { useState } from 'react';
+import './UniversityLabTable.css'; // Import the CSS file
+
+const UniversityLabTable = () => {
+  const [labs, setLabs] = useState([
+    { id: 1, name: 'Computer Lab', location: 'Building A, Room 101', equipment: 'Desktop computers, projector', capacity: 30 },
+    { id: 2, name: 'Chemistry Lab', location: 'Building B, Room 201', equipment: 'Chemical instruments, safety equipment', capacity: 25 },
+    { id: 3, name: 'Physics Lab', location: 'Building C, Room 301', equipment: 'Oscilloscopes, experimental setups', capacity: 20 },
+    // Add more lab entries as needed
+  ]);
+
+  return (
+    <div className="lab-table-container">
+      <h2>University Lab Table</h2>
+      <table className="lab-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Lab Name</th>
+            <th>Location</th>
+            <th>Equipment</th>
+            <th>Capacity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {labs.map((lab) => (
+            <tr key={lab.id}>
+              <td>{lab.id}</td>
+              <td>{lab.name}</td>
+              <td>{lab.location}</td>
+              <td>{lab.equipment}</td>
+              <td>{lab.capacity}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default UniversityLabTable;
