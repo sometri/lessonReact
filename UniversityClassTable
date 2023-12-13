@@ -1,0 +1,48 @@
+import React, { useState } from 'react';
+
+const UniversityClassTable = () => {
+  const [classes, setClasses] = useState([
+    { id: 1, name: 'Introduction to Computer Science', professor: 'Dr. Smith', schedule: 'Mon/Wed 10:00 AM - 11:30 AM', room: 'Room 101' },
+    { id: 2, name: 'History of Art', professor: 'Prof. Johnson', schedule: 'Tue/Thu 2:00 PM - 3:30 PM', room: 'Room 201' },
+    { id: 3, name: 'Mathematics for Business', professor: 'Dr. White', schedule: 'Mon/Wed 1:00 PM - 2:30 PM', room: 'Room 301' },
+    { id: 4, name: 'Chemistry 101', professor: 'Prof. Davis', schedule: 'Tue/Thu 9:00 AM - 10:30 AM', room: 'Room 102' },
+    { id: 5, name: 'Literature Seminar', professor: 'Dr. Robinson', schedule: 'Wed/Fri 3:00 PM - 4:30 PM', room: 'Room 202' },
+    { id: 6, name: 'Business Ethics', professor: 'Prof. Miller', schedule: 'Mon/Wed 3:30 PM - 5:00 PM', room: 'Room 303' },
+    { id: 7, name: 'Physics Lab', professor: 'Dr. Brown', schedule: 'Fri 10:00 AM - 12:00 PM', room: 'Lab A' },
+    { id: 8, name: 'Psychology 201', professor: 'Prof. Turner', schedule: 'Tue/Thu 1:00 PM - 2:30 PM', room: 'Room 203' },
+    { id: 9, name: 'International Relations', professor: 'Dr. Garcia', schedule: 'Wed/Fri 11:00 AM - 12:30 PM', room: 'Room 304' },
+    { id: 10, name: 'Software Engineering', professor: 'Dr. Martinez', schedule: 'Mon/Wed 2:30 PM - 4:00 PM', room: 'Room 103' },
+    { id: 11, name: 'Music Theory', professor: 'Prof. Clark', schedule: 'Tue/Thu 3:30 PM - 5:00 PM', room: 'Music Hall' },
+    { id: 12, name: 'Economics 301', professor: 'Dr. Turner', schedule: 'Mon/Wed 9:00 AM - 10:30 AM', room: 'Room 204' },
+    { id: 13, name: 'Environmental Science', professor: 'Prof. Hall', schedule: 'Thu 1:00 PM - 3:00 PM', room: 'Room 305' },
+    { id: 14, name: 'Marketing Strategies', professor: 'Dr. Lee', schedule: 'Fri 2:30 PM - 4:00 PM', room: 'Room 104' },
+    { id: 15, name: 'Health Sciences Seminar', professor: 'Prof. Adams', schedule: 'Wed/Fri 9:30 AM - 11:00 AM', room: 'Room 205' },
+  ]);
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Class Name</th>
+          <th>Professor</th>
+          <th>Schedule</th>
+          <th>Room</th>
+        </tr>
+      </thead>
+      <tbody>
+        {classes.map((classInfo) => (
+          <tr key={classInfo.id}>
+            <td>{classInfo.id}</td>
+            <td>{classInfo.name}</td>
+            <td>{classInfo.professor}</td>
+            <td>{classInfo.schedule}</td>
+            <td>{classInfo.room}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
+
+export default UniversityClassTable;
